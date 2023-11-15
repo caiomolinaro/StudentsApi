@@ -13,12 +13,12 @@ namespace StudentsApi.Services
             _dbContext = dbContext;
         }
 
-        public async Task<IEnumerable<Student>> GetStudents()
+        public async Task<IEnumerable<Student>> GetStudentsAsync()
         {
             return await _dbContext.Students.ToListAsync();
         }
 
-        public async Task<IEnumerable<Student>> GetStudentsByName(string name)
+        public async Task<IEnumerable<Student>> GetStudentsByNameAsync(string name)
         {
             IEnumerable<Student> students;
             if (!string.IsNullOrWhiteSpace(name))
@@ -27,30 +27,30 @@ namespace StudentsApi.Services
             }
             else
             {
-                students = await GetStudents();
+                students = await GetStudentsAsync();
             }
             return students;
         }
 
-        public async Task<Student> GetStudent(int id)
+        public async Task<Student> GetStudentAsync(int id)
         {
             var student = await _dbContext.Students.FindAsync(id);
             return student;
         }
 
-        public async Task CreateStudent(Student student)
+        public async Task CreateStudentAsync(Student student)
         {
             _dbContext.Students.Add(student);
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task UpdateStudent(Student student)
+        public async Task UpdateStudentAsync(Student student)
         {
             _dbContext.Entry(student).State = EntityState.Modified;
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task DeleteStudent(Student student)
+        public async Task DeleteStudentAsync(Student student)
         {
             _dbContext.Remove(student);
             await _dbContext.SaveChangesAsync();

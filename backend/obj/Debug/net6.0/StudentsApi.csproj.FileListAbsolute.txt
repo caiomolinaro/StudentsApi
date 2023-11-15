@@ -172,3 +172,10 @@ C:\Users\cmoli\OneDrive\Área de Trabalho\DEV\PROJECTS\StudentsApi\Backend\obj\D
 C:\Users\cmoli\OneDrive\Área de Trabalho\DEV\PROJECTS\StudentsApi\Backend\obj\Debug\net6.0\StudentsApi.pdb
 C:\Users\cmoli\OneDrive\Área de Trabalho\DEV\PROJECTS\StudentsApi\Backend\obj\Debug\net6.0\StudentsApi.genruntimeconfig.cache
 C:\Users\cmoli\OneDrive\Área de Trabalho\DEV\PROJECTS\StudentsApi\Backend\obj\Debug\net6.0\ref\StudentsApi.dll
+C:\Users\cmoli\OneDrive\Área de Trabalho\DEV\PROJECTS\StudentsApi\backend\obj\Debug\net6.0\StudentsApi.sourcelink.json
+C:\Users\cmoli\OneDrive\Área de Trabalho\DEV\PROJECTS\StudentsApi\Backend\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\cmoli\OneDrive\Área de Trabalho\DEV\PROJECTS\StudentsApi\Backend\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\cmoli\OneDrive\Área de Trabalho\DEV\PROJECTS\StudentsApi\Backend\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\cmoli\OneDrive\Área de Trabalho\DEV\PROJECTS\StudentsApi\Backend\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\cmoli\OneDrive\Área de Trabalho\DEV\PROJECTS\StudentsApi\Backend\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\cmoli\OneDrive\Área de Trabalho\DEV\PROJECTS\StudentsApi\Backend\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using StudentsApi.Model;
 using StudentsApi.Services;
@@ -7,6 +9,7 @@ namespace StudentsApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class StudentsController : ControllerBase
     {
         private readonly IStudentService _studentService;
@@ -21,7 +24,7 @@ namespace StudentsApi.Controllers
         {
             try
             {
-                var students = await _studentService.GetStudents();
+                var students = await _studentService.GetStudentsAsync();
                 return Ok(students);
             }
             catch
@@ -31,11 +34,11 @@ namespace StudentsApi.Controllers
         }
 
         [HttpGet("Name")]
-        public async Task<ActionResult<IAsyncEnumerable<Student>>> GetStudentsByName([FromQuery] string name)
+        public async Task<ActionResult<IAsyncEnumerable<Student>>> GetStudentsByNameAsync([FromQuery] string name)
         {
             try
             {
-                var students = await _studentService.GetStudentsByName(name);
+                var students = await _studentService.GetStudentsByNameAsync(name);
                 if (students.Count() == 0)
                     return NotFound($"Not found");
                 return Ok(students);
@@ -47,11 +50,11 @@ namespace StudentsApi.Controllers
         }
 
         [HttpGet("{id:int}", Name = "GetStudentsById")]
-        public async Task<ActionResult<Student>> GetStudentsById(int id)
+        public async Task<ActionResult<Student>> GetStudentsByIdAsync(int id)
         {
             try
             {
-                var student = await _studentService.GetStudent(id);
+                var student = await _studentService.GetStudentAsync(id);
 
                 if (student is null)
                     return NotFound($"Not found");
@@ -64,12 +67,12 @@ namespace StudentsApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> CreateStudent(Student student)
+        public async Task<ActionResult> CreateStudentAsync(Student student)
         {
             try
             {
-                await _studentService.CreateStudent(student);
-                return CreatedAtRoute(nameof(GetStudentsById), new { id = student.Id }, student);
+                await _studentService.CreateStudentAsync(student);
+                return CreatedAtRoute(nameof(GetStudentsByIdAsync), new { id = student.Id }, student);
             }
             catch
             {
@@ -78,13 +81,13 @@ namespace StudentsApi.Controllers
         }
 
         [HttpPut("{id:int}")]
-        public async Task<ActionResult> UpdateStudent(int id, [FromBody] Student student)
+        public async Task<ActionResult> UpdateStudentAsync(int id, [FromBody] Student student)
         {
             try
             {
                 if (student.Id == id)
                 {
-                    await _studentService.UpdateStudent(student);
+                    await _studentService.UpdateStudentAsync(student);
                     return Ok($"Student updated");
                 }
                 else
@@ -99,14 +102,14 @@ namespace StudentsApi.Controllers
         }
 
         [HttpDelete("{id:int}")]
-        public async Task<ActionResult> DeleteStudent(int id)
+        public async Task<ActionResult> DeleteStudentAsync(int id)
         {
             try
             {
-                var student = await _studentService.GetStudent(id);
+                var student = await _studentService.GetStudentAsync(id);
                 if (student != null)
                 {
-                    await _studentService.DeleteStudent(student);
+                    await _studentService.DeleteStudentAsync(student);
                     return Ok($"Student deleted");
                 }
                 else

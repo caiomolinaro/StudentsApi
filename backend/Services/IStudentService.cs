@@ -4,16 +4,16 @@ namespace StudentsApi.Services
 {
     public interface IStudentService
     {
-        Task<IEnumerable<Student>> GetStudents();
+        Task<IEnumerable<Student>> GetStudentsAsync();
 
-        Task<Student> GetStudent(int id);
+        Task<Student> GetStudentAsync(int id);
 
-        Task<IEnumerable<Student>> GetStudentsByName(string name);
+        Task<IEnumerable<Student>> GetStudentsByNameAsync(string name);
 
-        Task CreateStudent(Student student);
+        Task CreateStudentAsync(Student student);
 
-        Task UpdateStudent(Student student);
+        Task UpdateStudentAsync(Student student);
 
-        Task DeleteStudent(Student student);
+        Task DeleteStudentAsync(Student student);
     }
 }

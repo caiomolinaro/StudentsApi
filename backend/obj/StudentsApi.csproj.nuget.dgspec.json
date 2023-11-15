@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cmoli\\OneDrive\\Área de Trabalho\\DEV\\PROJECTS\\StudentsApi\\backend\\StudentsApi.csproj": {}
+    "C:\\Users\\cmoli\\OneDrive\\Área de Trabalho\\DEV\\PROJECTS\\StudentsApi\\Backend\\StudentsApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cmoli\\OneDrive\\Área de Trabalho\\DEV\\PROJECTS\\StudentsApi\\backend\\StudentsApi.csproj": {
+    "C:\\Users\\cmoli\\OneDrive\\Área de Trabalho\\DEV\\PROJECTS\\StudentsApi\\Backend\\StudentsApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cmoli\\OneDrive\\Área de Trabalho\\DEV\\PROJECTS\\StudentsApi\\backend\\StudentsApi.csproj",
+        "projectUniqueName": "C:\\Users\\cmoli\\OneDrive\\Área de Trabalho\\DEV\\PROJECTS\\StudentsApi\\Backend\\StudentsApi.csproj",
         "projectName": "StudentsApi",
-        "projectPath": "C:\\Users\\cmoli\\OneDrive\\Área de Trabalho\\DEV\\PROJECTS\\StudentsApi\\backend\\StudentsApi.csproj",
+        "projectPath": "C:\\Users\\cmoli\\OneDrive\\Área de Trabalho\\DEV\\PROJECTS\\StudentsApi\\Backend\\StudentsApi.csproj",
         "packagesPath": "C:\\Users\\cmoli\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cmoli\\OneDrive\\Área de Trabalho\\DEV\\PROJECTS\\StudentsApi\\backend\\obj\\",
+        "outputPath": "C:\\Users\\cmoli\\OneDrive\\Área de Trabalho\\DEV\\PROJECTS\\StudentsApi\\Backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\cmoli\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.25, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.25, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[7.0.13, )"
